@@ -1,0 +1,36 @@
+group 'HelloWorld'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE")
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+war {
+    baseName = 'HelloWorld'
+}
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+configurations {
+    providedRuntime
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+}

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    private static final String TEMPLATE = "Hello, %s !";
+    private static final String TEMPLATE = "Hello, nice to meet you, %s !";
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name",defaultValue = "world") String name){
